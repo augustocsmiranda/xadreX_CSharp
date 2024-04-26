@@ -15,6 +15,9 @@ namespace xadreX
                 {
                     Console.Clear();
                     Tela.imprimirTabuleiro(partida.tab);
+                    Console.WriteLine();
+                    Console.WriteLine("Turno: " + partida.turno);
+                    Console.WriteLine("Aguardando Jogada: " + partida.jogadorAtual);
 
                     Console.WriteLine();
                     Console.Write("Origem: ");
@@ -30,7 +33,7 @@ namespace xadreX
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                    partida.executaMovimento(origem, destino);
+                    partida.realizaJogada(origem, destino);
                 }
              }
             catch(TabuleiroException e)
